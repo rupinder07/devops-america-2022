@@ -1,0 +1,9 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /nagp
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop

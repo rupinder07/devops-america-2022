@@ -31,4 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
-*.bak
+
+archive/*
+*.log
+.DS_Store
