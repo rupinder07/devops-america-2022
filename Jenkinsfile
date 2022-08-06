@@ -19,9 +19,9 @@ pipeline {
                 sh 'mvn clean test'
             }
         }
-        stage('Package') {
+        stage('Test') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn sonar:sonar'
             }
         }
         stage('Building Docker') {

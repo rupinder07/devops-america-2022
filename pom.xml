@@ -17,6 +17,9 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <sonar.host.url>http://104.211.141.123:9000</sonar.host.url>
+        <sonar.login>sqa_a9b59bdd1649cdacc5718a827ec9ea2684524736</sonar.login>
+        <sonar.projectKey>Devops-Sample-Project</sonar.projectKey>
     </properties>
 
     <dependencies>
@@ -58,24 +61,16 @@
         </dependency>
     </dependencies>
 
-    <distributionManagement>
-        <repository>
-            <id>acs-hrms-artifact-feed</id>
-            <url>https://pkgs.dev.azure.com/acshrms/hrms-backend/_packaging/acs-hrms-artifact-feed/maven/v1</url>
-        </repository>
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>acs-hrms-artifact-feed</id>
-            <url>https://pkgs.dev.azure.com/acshrms/hrms-backend/_packaging/acs-hrms-artifact-feed/maven/v1</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>3.4.0.905</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
