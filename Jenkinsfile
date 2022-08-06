@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'agent1' }
+    tools {
+        maven 'apache-maven-3.8.6'
+    }
     stages {
         stage('Compile') {
             steps {
